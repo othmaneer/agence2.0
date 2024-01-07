@@ -1,0 +1,22 @@
+<mat-card class="add-client-card">
+    <h2 class="form-title">Ajouter Destination</h2>
+    <form #destinationForm="ngForm" class="add-client-form" (submit)="addNewDestination(destinationForm.value)">
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Pays</mat-label>
+            <input matInput [(ngModel)]="destination.pays" type="text" name="pays" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>ville</mat-label>
+            <input matInput [(ngModel)]="destination.ville" type="text" name="ville" />
+        </mat-form-field>
+
+
+        <button type="submit" mat-raised-button [ngStyle]="{ 'background-color': '#2ED47A', 'color': 'white' }"
+            class="submit-button"
+            style="grid-column: span 4; width: 150px;margin: auto;"><mat-icon>save_alt</mat-icon>Enregistrer</button>
+
+        
+    </form>
+</mat-card>

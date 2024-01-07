@@ -1,0 +1,70 @@
+<mat-card class="add-client-card"> 
+    <h2 class="form-title">Modifier Reservation</h2>
+    <form #reservationForm="ngForm" class="add-client-form" (submit)="updateReservation(reservationForm.value)">
+  
+         <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Client</mat-label>
+            <mat-select [(ngModel)]="reservation.client.nom" name="selectedClient">
+                <mat-option *ngFor="let clt of clients" [value]="clt.nom">{{ clt.nom + ' ' + clt.prenom}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Hotel</mat-label>
+            <mat-select [(ngModel)]="reservation.hotel.nom" name="selectedHotel">
+                <mat-option *ngFor="let htl of hotels" [value]="htl.nom">{{ htl.nom}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Transport</mat-label>
+            <mat-select [(ngModel)]="reservation.transports.nom" name="selectedTransport">
+                <mat-option *ngFor="let trp of transports" [value]="trp.nom">{{ trp.nom}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Destination</mat-label>
+            <mat-select [(ngModel)]="reservation.destination.ville" name="selectedDestination">
+                <mat-option *ngFor="let dst of destinations" [value]="dst.ville">{{ dst.ville}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="reservation.status" name="selectedStatus">
+                <mat-option value="Non payée">Non payée</mat-option>
+                <mat-option value="Confirmée">Confirmée</mat-option>
+                <mat-option value="Payée">Payée</mat-option>
+                <mat-option value="En attente">En attente</mat-option>
+                <mat-option value="Annulée">Annulée</mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Date début</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="reservation.date_debut" (dateChange)="onDateChangeDB($event)" name="selectedDateDB">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Date fin</mat-label>
+            <input matInput [matDatepicker]="picker1" [(ngModel)]="reservation.date_fin" (dateChange)="onDateChangeDF($event)" name="selectedDateDF">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+  
+        <button type="submit" mat-raised-button [ngStyle]="{ 'background-color': '#2ED47A', 'color': 'white' }"
+            class="submit-button"
+            style="grid-column: span 4; width: 150px;margin: auto;">
+            <mat-icon>save_alt</mat-icon>Enregistrer
+        </button>
+  
+    </form>
+  </mat-card>
+  

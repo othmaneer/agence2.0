@@ -1,0 +1,48 @@
+<div class="navbar">
+    <div class="navbar-links">
+      <a mat-list-item (click)="main()">
+        <div style="display: flex; align-items: center;">
+          <span style="margin-right: 5px;">Home</span>
+          <mat-icon class="navbar-icon" style="font-size: 24px;">home</mat-icon>
+        </div> 
+      </a>
+    
+    </div>
+  </div>
+  
+      <div class="main-content" [class.shifted]="isSidebarHovered" [class.shifted1]="!isSidebarHovered">
+        <div class="scrollable-content">
+        <div class="actions">        
+          
+          <div class="button-group">
+      
+            
+            <button mat-raised-button class="button" (click)="openAddDialog()" *ngIf="!isTestComponentEnabled"
+              [ngStyle]="{ 'background-color': '#25bff1', 'color': 'white'}">
+              <mat-icon>add</mat-icon>{{ addButtonLabel }}
+            </button>
+          </div>
+        </div>
+  
+        <div [@animation]="isMainComponentEnabled ? 'in' : 'out'" class="animated-section">
+          <mat-progress-bar *ngIf="isLoading" color="#05b5ee" mode="determinate" [value]="loadingProgress"></mat-progress-bar>
+          <mat-tab-group *ngIf="isMainComponentEnabled && !isLoading" class="tab-group" (selectedTabChange)="onTabChange($event)" #tabGroup>
+            
+            
+          <mat-tab label="Client"><app-list-client #listClientTab></app-list-client></mat-tab>
+          <mat-tab label="Facture"><app-list-facture #listFactureTab></app-list-facture></mat-tab>
+          <mat-tab label="Hotel"><app-list-hotel #listHotelTab></app-list-hotel></mat-tab>
+          <mat-tab label="Reservation"><app-list-reservation #listReservationTab></app-list-reservation></mat-tab>
+          <mat-tab label="Transport"><app-list-transport #listTransportTab></app-list-transport></mat-tab>
+          <mat-tab label="Destination"><app-list-destination #listDestinationTab></app-list-destination></mat-tab>
+          
+        </mat-tab-group>
+      </div>
+  
+      <!-- <div [@animation]="isTestComponentEnabled ? 'in' : 'out'" class="animated-section">
+        <mat-progress-bar *ngIf="isLoading"color="#05b5ee"  mode="determinate" [value]="loadingProgress"></mat-progress-bar>
+        <app-test #reportingTab *ngIf="isTestComponentEnabled && !isLoading"></app-test>
+      </div> -->
+      </div>
+    </div>
+  

@@ -1,0 +1,27 @@
+<mat-card class="add-client-card">
+    <h2 class="form-title">Ajouter Destination</h2>
+    <form #transportForm="ngForm" class="add-client-form" (submit)="addNewTransport(transportForm.value)">
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Nom</mat-label>
+            <input matInput [(ngModel)]="transport.nom" type="text" name="nom" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Type</mat-label>
+            <input matInput [(ngModel)]="transport.type" type="text" name="type" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Capacité</mat-label>
+            <input matInput [(ngModel)]="transport.capacite" type="text" name="capacite" />
+        </mat-form-field>
+
+
+        <button type="submit" mat-raised-button [ngStyle]="{ 'background-color': '#2ED47A', 'color': 'white' }"
+            class="submit-button"
+            style="grid-column: span 4; width: 150px;margin: auto;"><mat-icon>save_alt</mat-icon>Enregistrer</button>
+
+        
+    </form>
+</mat-card>

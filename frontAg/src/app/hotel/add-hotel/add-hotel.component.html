@@ -1,0 +1,30 @@
+<mat-card class="add-client-card">
+    <h2 class="form-title">Ajouter Hotel</h2>
+    <form #hotelForm="ngForm" class="add-client-form" (submit)="addNewHotel(hotelForm.value)">
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Nom</mat-label>
+            <input matInput [(ngModel)]="hotel.nom" type="text" name="nom" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Libellé</mat-label>
+            <input matInput [(ngModel)]="hotel.libelle" type="text" name="libelle" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Caractéristique</mat-label>
+            <input matInput [(ngModel)]="hotel.caracteristique" type="text" name="caracteristique" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Prix</mat-label>
+            <input matInput [(ngModel)]="hotel.prix" type="number" name="adresse" />
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button [ngStyle]="{ 'background-color': '#2ED47A', 'color': 'white' }"
+            class="submit-button"
+            style="grid-column: span 4; width: 150px;margin: auto;"><mat-icon>save_alt</mat-icon>Enregistrer
+        </button>
+    </form>
+</mat-card>
