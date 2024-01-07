@@ -5,28 +5,28 @@
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Client</mat-label>
             <mat-select [(ngModel)]="selectedClient" name="selectedClient">
-                <mat-option *ngFor="let clts of clients" [value]="clts.nom">{{ clts.nom + ' ' + clts.prenom | titlecase }}</mat-option>
+                <mat-option *ngFor="let clts of clients" [value]="clts">{{ clts.nom + ' ' + clts.prenom | titlecase }}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Hotel</mat-label>
             <mat-select [(ngModel)]="selectedHotel" name="selectedHotel">
-                <mat-option *ngFor="let htls of hotels" [value]="htls.nom">{{ htls.nom | titlecase }}</mat-option>
+                <mat-option *ngFor="let htls of hotels" [value]="htls">{{ htls.nom | titlecase }}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Destination</mat-label>
             <mat-select [(ngModel)]="selectedDestination" name="selectedDestination">
-                <mat-option *ngFor="let dsts of destinations" [value]="dsts.ville">{{ dsts.pays + ' : ' + dsts.ville | titlecase }}</mat-option>
+                <mat-option *ngFor="let dsts of destinations" [value]="dsts">{{ dsts.pays + ' : ' + dsts.ville | titlecase }}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Transport</mat-label>
             <mat-select [(ngModel)]="selectedTransport" name="selectedTransport">
-                <mat-option *ngFor="let trps of transports" [value]="trps.nom">{{ trps.nom + ' : ' + trps.type | titlecase }}</mat-option>
+                <mat-option *ngFor="let trps of transports" [value]="trps">{{ trps.nom + ' : ' + trps.type | titlecase }}</mat-option>
             </mat-select>
         </mat-form-field>
 
@@ -48,7 +48,7 @@
 
         <mat-form-field>
             <mat-label>Status</mat-label>
-            <mat-select >
+            <mat-select  [(ngModel)]="selectedStatus" name="selectedStatus" >
               <mat-option value="Non payée">Non payée</mat-option>
               <mat-option value="Confirmée">Confirmée</mat-option>
               <mat-option value="Payée">Payée</mat-option>

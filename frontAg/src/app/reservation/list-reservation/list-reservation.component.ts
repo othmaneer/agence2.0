@@ -74,11 +74,7 @@ export class ListReservationComponent {
 
     ngOnInit(): void {
       this.fetchReservation();
-      // this.fetchClient();
-      // this.fetchDestination()
-      // this.fetchTransport();
-      // this.fetchHotel();
-    }
+    } 
 
     fetchReservation(): void {
       this.reservationService.getAllReservationPage(this.pageNumber, this.sizePage).subscribe(
@@ -93,60 +89,60 @@ export class ListReservationComponent {
       );
     }
     
-  fetchHotel() {
-    this.hotelService.getAllHotel(this.pageNumber, this.sizePage)
-      .subscribe(
-        (data: any) => {
-          this.hotels = data.content;
-          this.nb = data.totalElements;
-        },
-        (error) => {
-          //this.showSpinner=true
-          console.error('Error fetching hotels:', error);
-        }
-      );
-  }
+  // fetchHotel() {
+  //   this.hotelService.getAllHotel(this.pageNumber, this.sizePage)
+  //     .subscribe(
+  //       (data: any) => {
+  //         this.hotels = data.content;
+  //         this.nb = data.totalElements;
+  //       },
+  //       (error) => {
+  //         //this.showSpinner=true
+  //         console.error('Error fetching hotels:', error);
+  //       }
+  //     );
+  // }
 
-    fetchClient() {
-      this.clientService.getAllClient(this.pageNumber, this.sizePage)
-        .subscribe(
-          (data: any) => {
-            this.clients = data.content;
-            this.nb = data.totalElements;
-          },
-          (error) => {
-            //this.showSpinner=true
-            console.error('Error fetching client:', error);
-          }
-        );
-    }
+  //   fetchClient() {
+  //     this.clientService.getAllClient(this.pageNumber, this.sizePage)
+  //       .subscribe(
+  //         (data: any) => {
+  //           this.clients = data.content;
+  //           this.nb = data.totalElements;
+  //         },
+  //         (error) => {
+  //           //this.showSpinner=true
+  //           console.error('Error fetching client:', error);
+  //         }
+  //       );
+  //   }
     
-  fetchTransport() {
-    this.transportService.getAllTransportPage(this.pageNumber, this.sizePage)
-      .subscribe(
-        (data: any) => {
-          this.transports = data.content;
-          this.nb = data.totalElements;
-        },
-        (error) => {
-          //this.showSpinner=true
-          console.error('Error fetching client:', error);
-        }
-      );
-  }
-  fetchDestination() {
-    this.destinationService.getAllDestinationPage(this.pageNumber, this.sizePage)
-      .subscribe(
-        (data: any) => {
-          this.destinations = data.content;
-          this.nb = data.totalElements;
-        },
-        (error) => {
-          //this.showSpinner=true
-          console.error('Error fetching client:', error);
-        }
-      );
-  }
+  // fetchTransport() {
+  //   this.transportService.getAllTransportPage(this.pageNumber, this.sizePage)
+  //     .subscribe(
+  //       (data: any) => {
+  //         this.transports = data.content;
+  //         this.nb = data.totalElements;
+  //       },
+  //       (error) => {
+  //         //this.showSpinner=true
+  //         console.error('Error fetching client:', error);
+  //       }
+  //     );
+  // }
+  // fetchDestination() {
+  //   this.destinationService.getAllDestinationPage(this.pageNumber, this.sizePage)
+  //     .subscribe(
+  //       (data: any) => {
+  //         this.destinations = data.content;
+  //         this.nb = data.totalElements;
+  //       },
+  //       (error) => {
+  //         //this.showSpinner=true
+  //         console.error('Error fetching client:', error);
+  //       }
+  //     );
+  // }
   showSnackBar(message: string): void {
     this.snackBar.open(message, 'Close', {
       duration: 5000,
@@ -160,10 +156,10 @@ export class ListReservationComponent {
     this.sizePage = event.pageSize;
     this.pageNumber = event.pageIndex;
     this.fetchReservation();
-    this.fetchClient();
-    this.fetchDestination()
-    this.fetchTransport();
-    this.fetchHotel();
+    // this.fetchClient();
+    // this.fetchDestination()
+    // this.fetchTransport();
+    // this.fetchHotel();
   }
 
   openEditDialog(reservation: Reservation): void {

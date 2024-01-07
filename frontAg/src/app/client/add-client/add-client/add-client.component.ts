@@ -32,12 +32,12 @@ export class AddClientComponent {
     this.clientService.addClient(clientData).subscribe(
       (response) => {
       
-        console.log('New formateur added successfully:', response);
+        console.log('New client added successfully:', response);
         this.showSnackBar('Formateur Ajouté');
         this.dialogRef.close();
       },
       (error) => {
-        console.error('Error adding new formateur:', error);
+        console.error('Error adding new client:', error);
         this.dialogRef.close();
       }
     );

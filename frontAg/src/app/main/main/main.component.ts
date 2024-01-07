@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { AddClientComponent } from 'src/app/client/add-client/add-client/add-client.component';
 import { AddDestinationComponent } from 'src/app/destination/add-destination/add-destination.component';
-import { AddFactureComponent } from 'src/app/facture/add-facture/add-facture.component';
 import { AddHotelComponent } from 'src/app/hotel/add-hotel/add-hotel.component';
 import { AddTransportComponent } from 'src/app/transport/add-transport/add-transport.component';
 import { AddReservationComponent } from 'src/app/reservation/add-reservation/add-reservation.component';
@@ -205,16 +204,7 @@ export class MainComponent {
   
     }
 
-    openAddFactureDialog(): void {
-      const dialogRefFacture = this.dialog.open(AddFactureComponent, {
-        width: 'auto',
-        height: 'auto',
-      });
-      dialogRefFacture.afterClosed().subscribe(result => {
-        this.refreshTabComponents();
-      });
-  
-    }
+ 
 
     openAddHotelDialog(): void {
 

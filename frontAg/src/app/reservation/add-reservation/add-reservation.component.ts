@@ -4,11 +4,13 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Client } from 'src/model/client';
 import { Destination } from 'src/model/destination';
+import { Facture } from 'src/model/facture';
 import { Hotel } from 'src/model/hotel';
 import { Reservation } from 'src/model/reservation';
 import { Transport } from 'src/model/transport';
 import { ClientService } from 'src/service/client/client.service';
 import { DestinationService } from 'src/service/destination/destination.service';
+import { FactureService } from 'src/service/facture/facture.service';
 import { HotelService } from 'src/service/hotel/hotel.service';
 import { ReservationService } from 'src/service/reservation/reservation.service';
 import { TransportService } from 'src/service/transport/transport.service';
@@ -38,10 +40,11 @@ export class AddReservationComponent {
     private hotelService: HotelService, 
     private clientService: ClientService, 
     private reservationService: ReservationService, 
+    private factureService : FactureService,
     public dialogRef: MatDialogRef<AddReservationComponent>,
     private snackBar: MatSnackBar) { }
 
-    reservation: Reservation ={
+    reservations: Reservation ={
       idReservation: 0,
       date_debut: '',
       date_fin: '',
@@ -50,6 +53,13 @@ export class AddReservationComponent {
       hotel: {} as Hotel,
       client: {} as Client,
       destination: {} as Destination
+    }
+
+    facture: Facture ={
+      idFacture: 0,
+      nom: '',
+      total: 0,
+      reservation: {} as Reservation
     }
     ngOnInit(): void {
       this.fetchClient();
@@ -186,28 +196,33 @@ export class AddReservationComponent {
       reservationData.destination = reservationData.destination || {} as Destination;
   
       // Set the properties for the initialized objects
-      reservationData.client.idCient = clientId;
-      reservationData.client.nom = this.selectedClient;
+      // reservationData.client.idCient = clientId;
+      reservationData.client = this.selectedClient;
   
-      reservationData.hotel.idHotel = hotelId;
-      reservationData.hotel.nom = this.selectedHotel;
+      // reservationData.hotel.idHotel = hotelId;
+      reservationData.hotel = this.selectedHotel;
   
-      reservationData.transports.idTransport = transportId;
-      reservationData.transports.nom = this.selectedTransport;
+      // reservationData.transports.idTransport = transportId;
+      reservationData.transports = this.selectedTransport;
   
-      reservationData.destination.idDestination = destinationId;
-      reservationData.destination.ville = this.selectedDestination;
+      // reservationData.destination.idDestination = destinationId;
+      reservationData.destination = this.selectedDestination;
   
       reservationData.date_debut = this.selectedDateDB?.toISOString().split('T')[0] ?? '';
       reservationData.date_fin = this.selectedDateDF?.toISOString().split('T')[0] ?? '';
       reservationData.status = this.selectedStatus;
 
-      console.log("hote: ", reservationData.hotel.nom);
+      console.log("hote: ", reservationData.hotel.prix);
       console.log("tran: ", reservationData.transports.nom);
       console.log("client: ", reservationData.client.idCient);
       console.log("des: ",reservationData.destination.ville);
       console.log("status: ",reservationData.status);
   
+      this.reservations= reservationData;
+      console.log("reservations: ",this.reservations);
+      console.log("selected trans: ",this.selectedTransport);
+
+
       this.reservationService.addReservation(reservationData).subscribe(
           (response) => {
               console.log('New reservation added successfully:', response);
@@ -220,7 +235,31 @@ export class AddReservationComponent {
               this.dialogRef.close();
           }
       );
+
+      // this.facture.reservation.hotel.idHotel=hotelId;
+      // this.facture.reservation.client.idCient=clientId;
+
   }
+
+  // addNewFacture(factureData: Facture)
+  // {
+  //   //this.facture.reservation =this.reservations;
+
+  //   factureData.reservation=this.reservations
+  //   this.factureService.addFacture(factureData).subscribe(
+  //     (response) => {
+  //         console.log('New facture added successfully:', response);
+  //         //this.showSnackBar('Reservation Ajoutée');
+  //         //this.dialogRef.close();
+  //     },
+  //     (error) => {
+  //         console.error('Error adding new facture:', error);
+  //         this.showSnackBar('Erreur facture ');
+  //         this.dialogRef.close();
+  //     }
+  // );
+
+  // }
   
 
     getClientIdByName(clientName: string): number {

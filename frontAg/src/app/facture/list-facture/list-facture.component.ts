@@ -80,6 +80,27 @@ export class ListFactureComponent {
     }
   
 
-
+    generatePdf(id : number, nom :String) {
+      console.log("id: ",id)
+      this.factureService.generatePdf(id).subscribe(
+        (response: any) => {
+          const blob = new Blob([response], { type: 'application/pdf' });
+          const url = window.URL.createObjectURL(blob);
+    
+          // Create a link element to trigger the download
+          const a = document.createElement('a');
+          a.href = url;
+          a.download =  nom+ '.pdf';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+    
+          window.URL.revokeObjectURL(url); // Clean up the URL object to free resources
+        },
+        (error) => {
+          console.error(error); // Handle error
+        }
+      );
+    }
 
 }

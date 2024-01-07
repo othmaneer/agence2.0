@@ -50,7 +50,6 @@ import { DeleteReservationComponent } from './reservation/delete-reservation/del
 import { AddTransportComponent } from './transport/add-transport/add-transport.component';
 import { EditTransportComponent } from './transport/edit-transport/edit-transport.component';
 import { DeleteTransportComponent } from './transport/delete-transport/delete-transport.component';
-import { AddFactureComponent } from './facture/add-facture/add-facture.component';
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
 import { DeleteFactureComponent } from './facture/delete-facture/delete-facture.component';
 import { AddDestinationComponent } from './destination/add-destination/add-destination.component';
@@ -82,7 +81,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddTransportComponent,
     EditTransportComponent,
     DeleteTransportComponent,
-    AddFactureComponent,
     EditFactureComponent,
     DeleteFactureComponent,
     AddDestinationComponent,

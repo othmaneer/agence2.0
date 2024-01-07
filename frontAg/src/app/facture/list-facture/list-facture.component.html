@@ -11,12 +11,7 @@
             <ng-container [ngSwitch]="column">
               <ng-container *ngSwitchCase="'Action'">
                 <div class="action-container">
-                  <button mat-icon-button class="action-button">
-                    <mat-icon class="action-icon">check</mat-icon>
-                  </button>
-  
-                  
-                  <button mat-icon-button class="action-button red-icon">
+                  <button mat-icon-button class="action-button" (click)="generatePdf(factures.idFacture, factures.nom)">
                     <mat-icon class="action-icon">arrow_downward</mat-icon>
                   </button>
                 </div>

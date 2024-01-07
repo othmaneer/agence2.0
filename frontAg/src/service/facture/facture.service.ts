@@ -43,4 +43,9 @@ export class FactureService {
     return this.http.get(url);
   }
 
+  generatePdf(factureId: number): Observable<ArrayBuffer> {
+    const url = `${this.apiUrl}/generatePdf/${factureId}`;
+    return this.http.get(url, { responseType: 'arraybuffer' });
+  }
+
 }
