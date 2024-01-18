@@ -57,7 +57,9 @@
               </ng-container>
 
               <ng-container *ngSwitchCase="'Status'">
-                {{ reservations.status }}
+                <div [ngClass]="getStatusStyle(reservations.status)">
+                  {{ reservations.status }}
+                </div>
               </ng-container>
 
   

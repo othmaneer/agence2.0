@@ -35,7 +35,7 @@ export class LoginComponent {
               // Login successful
               console.log('Login successful');
               this.showSnackBar('Login successful');
-              this.router.navigate(['/main']);
+              this.router.navigate(['/chart']);
             } else {
               // Login failed
               console.log('Login failed');

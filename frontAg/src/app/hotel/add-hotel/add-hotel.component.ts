@@ -32,12 +32,12 @@ export class AddHotelComponent {
     this.hotelService.addHotel(hotelData).subscribe(
       (response) => {
       
-        console.log('New formateur added successfully:', response);
-        this.showSnackBar('Formateur Ajouté');
+        console.log('New HOTEL added successfully:', response);
+        this.showSnackBar('Hotel Ajouté');
         this.dialogRef.close();
       },
       (error) => {
-        console.error('Error adding new formateur:', error);
+        console.error('Error adding new hotel:', error);
         this.dialogRef.close();
       }
     );

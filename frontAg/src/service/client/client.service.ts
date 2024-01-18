@@ -42,4 +42,9 @@ export class ClientService {
     console.log("url: "+url);
     return this.http.get(url);
   }
+
+  totalClient(){
+    const url = `${this.apiUrl}/nb`;
+    return this.http.get(url);
+  }
 }

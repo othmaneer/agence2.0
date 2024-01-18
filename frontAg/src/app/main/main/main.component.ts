@@ -270,6 +270,22 @@ export class MainComponent {
       });
     }
 
+    reporting() {
+      this.isLoading = true;
+      this.isTestComponentEnabled = true;
+      this.isMainComponentEnabled = false;
+  
+      this.loadingProgress = 0;
+      const progressInterval = setInterval(() => {
+        if (this.loadingProgress < 100) {
+          this.loadingProgress += 10; // Adjust this value to control the loading progress
+        } else {
+          clearInterval(progressInterval);
+          this.isLoading = false;
+        }
+      }, 100);
 
+      this.router.navigate(['/chart']);
+    } 
 
 }

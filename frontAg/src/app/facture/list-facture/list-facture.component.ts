@@ -23,7 +23,7 @@ export class ListFactureComponent {
     'Date de fin',
     'Status',
     'Total',
-    'Action',
+    'Télécharger',
   ]; 
 
   factures: Facture[] = [];
@@ -58,7 +58,7 @@ export class ListFactureComponent {
           console.log(data.content)
         },
         (error) => {
-          console.error('Error fetching reservation:', error);
+          console.error('Error fetching facture:', error);
         }
       );
     }

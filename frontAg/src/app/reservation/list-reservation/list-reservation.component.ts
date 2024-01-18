@@ -188,6 +188,23 @@ export class ListReservationComponent {
     });
   }
 
+  getStatusStyle(status: string): string {
+    switch (status) {
+      case 'Annulée':
+        return 'cancelled-status';
+      case 'En attente':
+        return 'pending-status';
+      case 'Payée':
+        return 'paid-status';
+      case 'Confirmée':
+        return 'confirmed-status';
+      case 'Non payée':
+        return 'unpaid-status';
+      default:
+        return '';
+    }
+  }
+
 
 
     

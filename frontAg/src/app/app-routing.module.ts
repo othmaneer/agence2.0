@@ -8,6 +8,8 @@ import { ListReservationComponent } from './reservation/list-reservation/list-re
 import { ListTransportComponent } from './transport/list-transport/list-transport.component';
 import { MainComponent } from './main/main/main.component';
 import { LoginComponent } from './login/login.component';
+import { ChartComponent } from './charts/reporting/reporting.component';
+import { ReportingComponent } from './reporting/reporting/reporting.component';
 const routes: Routes = [
 
   {path:'client', component:ListClientComponent},
@@ -17,6 +19,7 @@ const routes: Routes = [
   {path:'destination', component:ListDestinationComponent},
   {path:'hotel', component:ListHotelComponent},
   {path:'main', component:MainComponent},
+  {path:'chart', component:ReportingComponent},
   {path:'', component:LoginComponent},
 ];
 

@@ -38,4 +38,32 @@ export class ReservationService {
     console.log("url: "+url);
     return this.http.get(url);
   }
+
+  totalPaye(){
+    const url = `${this.apiUrl}/payee`;
+    return this.http.get(url);
+  }
+  totalNonPaye(){
+    const url = `${this.apiUrl}/nonPayee`;
+    return this.http.get(url);
+  }
+
+  nbReservationParStatus(){
+    const url = `${this.apiUrl}/resParStatus`;
+    return this.http.get(url);
+  }
+  chifrreParMois(){
+    const url = `${this.apiUrl}/chiffreMois`;
+    return this.http.get(url);
+  }
+
+  chifrreParMoisNet(){
+    const url = `${this.apiUrl}/chiffreMoisNet`;
+    return this.http.get(url);
+  }
+
+  nbResType(){
+    const url = `${this.apiUrl}/nbResParType`;
+    return this.http.get(url);
+  }
 }

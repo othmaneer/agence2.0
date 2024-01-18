@@ -6,9 +6,21 @@
           <mat-icon class="navbar-icon" style="font-size: 24px;">home</mat-icon>
         </div> 
       </a>
+
+      <a mat-list-item (click)="reporting()">
+        <div style="display: flex; align-items: center;">
+          <span style="margin-right: 5px;">Reporting</span>
+          <mat-icon class="navbar-icon" style="font-size: 24px;">dashboard</mat-icon>
+        </div>
+        
+         
+      
+      </a>
+
     
     </div>
   </div>
+  
   
       <div class="main-content" [class.shifted]="isSidebarHovered" [class.shifted1]="!isSidebarHovered">
         <div class="scrollable-content">

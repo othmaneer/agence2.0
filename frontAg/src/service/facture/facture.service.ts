@@ -48,4 +48,13 @@ export class FactureService {
     return this.http.get(url, { responseType: 'arraybuffer' });
   }
 
+  totalBrut(){
+    const url = `${this.apiUrl}/brut`;
+    return this.http.get(url);
+  }
+
+  totalNet(){
+    const url = `${this.apiUrl}/net`;
+    return this.http.get(url);
+  }
 }

@@ -63,6 +63,10 @@ import { ListHotelComponent } from './hotel/list-hotel/list-hotel.component';
 import { LoginComponent } from './login/login.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChartComponent } from './charts/reporting/reporting.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ReportingComponent } from './reporting/reporting/reporting.component';
+
 
 @NgModule({
   declarations: [
@@ -91,13 +95,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListReservationComponent,
     ListTransportComponent,
     ListHotelComponent,
-    LoginComponent
+    LoginComponent,
+    ChartComponent,
+    ReportingComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    NgApexchartsModule,
     MatTableModule,
    // ReactiveFormsModule,
    // FormsModule,
@@ -133,7 +140,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatBadgeModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
 
 
   ],

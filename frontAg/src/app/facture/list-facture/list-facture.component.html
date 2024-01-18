@@ -9,7 +9,7 @@
   
           <td mat-cell *matCellDef="let factures">
             <ng-container [ngSwitch]="column">
-              <ng-container *ngSwitchCase="'Action'">
+              <ng-container *ngSwitchCase="'Télécharger'">
                 <div class="action-container">
                   <button mat-icon-button class="action-button" (click)="generatePdf(factures.idFacture, factures.nom)">
                     <mat-icon class="action-icon">arrow_downward</mat-icon>

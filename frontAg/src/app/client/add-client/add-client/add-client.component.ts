@@ -33,7 +33,7 @@ export class AddClientComponent {
       (response) => {
       
         console.log('New client added successfully:', response);
-        this.showSnackBar('Formateur Ajouté');
+        this.showSnackBar('Client Ajouté');
         this.dialogRef.close();
       },
       (error) => {

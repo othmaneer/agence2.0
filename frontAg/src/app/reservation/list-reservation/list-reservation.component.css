@@ -257,3 +257,38 @@ table {
   font-size: 18px;
   padding: 0.01rem; /* Adjust the icon size as needed */
 }
+
+.cancelled-status {
+  color: white;
+  background-color: #E57373; /* Light red */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.pending-status {
+  color: black;
+  background-color: #FFD54F; /* Amber */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.paid-status {
+  color: white;
+  background-color: #66BB6A; /* Green */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.confirmed-status {
+  color: white;
+  background-color: #42A5F5; /* Blue */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.unpaid-status {
+  color: white;
+  background-color: #757575; /* Gray */
+  padding: 5px;
+  border-radius: 5px;
+}

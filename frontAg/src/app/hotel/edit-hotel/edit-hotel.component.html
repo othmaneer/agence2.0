@@ -1,9 +1,9 @@
 <mat-card class="add-client-card">
-    <h2 class="form-title">Modifier Client</h2>
+    <h2 class="form-title">Modifier Hotel</h2>
     <form #hotelForm="ngForm" class="add-client-form" (submit)="updateHotel(hotelForm.value)">
 
         <mat-form-field appearance="outline" class="half-width">
-            <mat-label>Nom</mat-label>
+            <mat-label>Nom</mat-label> 
             <input matInput [(ngModel)]="data.nom" type="text" name="nom" />
         </mat-form-field>
 
